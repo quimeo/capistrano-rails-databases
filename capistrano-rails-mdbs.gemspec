@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "capistrano/rails/mdbs/version"
@@ -10,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["carl@quimeo.fr"]
 
   spec.summary       = %q{}
-  spec.description   = %q{}
-  spec.homepage      = 'https://github.com/quimeo/capistrano-rails-mdbs'
+  spec.description   = %q{Add special task or migrate all databases}
+  spec.homepage      = %q{https://github.com/quimeo/capistrano-rails-mdbs}
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -33,4 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16.a"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+
+  spec.add_development_dependency'capistrano-rails', '~> 0'
 end
