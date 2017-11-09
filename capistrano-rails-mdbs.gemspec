@@ -1,10 +1,10 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "capistrano/rails/mdbs/version"
+#require "capistrano/rails/mdbs/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "capistrano-rails-mdbs"
-  spec.version       = '0.0.2-0'
+  spec.name          = "capistrano-rails-migrate-all_dbs"
+  spec.version       = '0.0.1'
   spec.authors       = ["De gentiile carl"]
   spec.email         = ["carl@quimeo.fr"]
 
