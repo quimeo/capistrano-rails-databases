@@ -1,14 +1,16 @@
-load File.expand_path("../set_rails_env.rake", __FILE__)
-require 'yaml'
 require 'byebug'
+require 'yaml'
+load File.expand_path("../set_rails_env.rake", __FILE__)
 
 namespace :deploy do
-  def get_all_env
-    yml_file = '/home/deploy/v2ror_devel/config/database.yml'
-    on roles :all do |host|
-      abort "Create #{yml_file}" unless test("[ -f #{yml_file} ]")
-    end
-      envs = YAML.load(`ssh devel "cat #{yml_file}"`)
+
+  def get_all_env host
+    yml_file = "#{fetch :deploy_to}/shared/config/database.yml"
+    # puts "get_all_env/yml_file\t(#{yml_file})"
+
+    cmd = "ssh #{host} \"cat #{yml_file}\""
+    # puts cmd
+    envs = YAML.load(`#{cmd}`)
   end
 
   desc 'Runs rake db:migrate_all_dbs if migrations are set'
@@ -28,16 +30,18 @@ namespace :deploy do
 
   desc 'Runs rake db:migrate'
   task migrating_all_dbs: [:set_rails_env] do
-    envs = get_all_env
-    envs.each do |rails_env|
-      puts "Task is invoked"
-      on fetch(:migration_servers) do
-        puts fetch(:migration_servers)
-        within release_path do
-          puts release_path
-          with rails_env: rails_env.first do
-            puts "Migration for #{rails_env.first} is runing"
-            execute :rake, 'db:migrate'
+    colors = SSHKit::Color.new($stderr)
+    on roles :all do |host|
+      info "Task migrating_all_dbs is invoked for #{host}"
+      envs = get_all_env host
+      envs.each do |rails_env|
+        on fetch(:migration_servers) do
+          # puts fetch(:migration_servers)
+          within release_path do
+            with rails_env: rails_env.first do
+              info colors.colorize("Migration for\t\t\t#{rails_env.first}", :cyan)
+              execute :rake, 'db:migrate'
+            end
           end
         end
       end
@@ -52,6 +56,5 @@ namespace :load do
     set :conditionally_migrate,           fetch(:conditionally_migrate, false)
     set :migration_role,                  fetch(:migration_role, :db)
     set :migration_servers, -> { primary( fetch(:migration_role)) }
-    set :all_rails_envs, get_all_env
   end
 end

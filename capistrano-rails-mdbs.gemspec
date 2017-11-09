@@ -4,7 +4,7 @@ require "capistrano/rails/mdbs/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-rails-mdbs"
-  spec.version       = Capistrano::Rails::Mdbs::VERSION
+  spec.version       = '0.0.2-0'
   spec.authors       = ["De gentiile carl"]
   spec.email         = ["carl@quimeo.fr"]
 
