@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-rails-migrate-all_dbs"
   spec.version       = '0.0.1'
-  spec.authors       = ["De gentiile carl"]
+  spec.authors       = ["carl de gentile"]
   spec.email         = ["carl@quimeo.fr"]
 
   spec.summary       = %q{}
