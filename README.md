@@ -1,4 +1,4 @@
-# Capistrano::Rails::Mdbs
+# Capistrano::Rails::Migrate:All_Dbs
 
 It ables you to migrate your databases on all your ruby ENV
 
@@ -7,16 +7,16 @@ It ables you to migrate your databases on all your ruby ENV
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'capistrano-rails-mdbs'
+gem 'capistrano-rails-migrate-all_dbs'
 ```
 
 And then execute:
 
-    $ bundle server migrate_all_dbs
+    $ bundle server deploy:migrate_all_dbs
 
 Or install it yourself as:
 
-    $ gem install capistrano-rails-mdbs
+    $ gem install 'capistrano-rails-migrate-all_dbs'
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/capistrano-rails-mdbs.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/capistrano-rails-migrate-all_dbs.
 
 ## License
 

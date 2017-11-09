@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-rails-migrate-all_dbs"
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ["carl de gentile"]
   spec.email         = ["carl@quimeo.fr"]
 
@@ -34,5 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
 
-  spec.add_development_dependency 'capistrano-rails'
+  spec.add_dependency 'capistrano-rails'
 end

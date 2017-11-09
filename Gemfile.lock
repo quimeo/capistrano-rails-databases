@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capistrano-rails-mdbs (0.0.1)
+    capistrano-rails-migrate-all_dbs (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -32,10 +32,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16.a)
-  capistrano-rails (~> 0)
-  capistrano-rails-mdbs!
+  capistrano-rails
+  capistrano-rails-migrate-all_dbs!
   minitest (~> 5.0)
   rake (~> 10.0)
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.16.0
