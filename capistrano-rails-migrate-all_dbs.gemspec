@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{}
   spec.description   = %q{Add special task or migrate all databases}
-  spec.homepage      = %q{https://github.com/quimeo/capistrano-rails-mdbs}
+  spec.homepage      = %q{https://github.com/quimeo/capistrano-rails-migrate-all_dbs}
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
