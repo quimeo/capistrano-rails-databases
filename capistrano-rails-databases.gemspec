@@ -3,14 +3,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 #require "capistrano/rails/mdbs/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "capistrano-rails-migrate-all_dbs"
-  spec.version       = '0.0.2'
+  spec.name          = "capistrano-rails-databases"
+  spec.version       = '0.0.0'
   spec.authors       = ["carl de gentile"]
   spec.email         = ["carl@quimeo.fr"]
 
   spec.summary       = %q{}
   spec.description   = %q{Add special task or migrate all databases}
-  spec.homepage      = %q{https://github.com/quimeo/capistrano-rails-migrate-all_dbs}
+  spec.homepage      = %q{https://github.com/quimeo/capistrano-rails-databases}
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

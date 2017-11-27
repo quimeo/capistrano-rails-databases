@@ -7,7 +7,7 @@ It ables you to migrate your databases on all your ruby ENV
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'capistrano-rails-migrate-all_dbs'
+gem 'capistrano-rails-databases'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install 'capistrano-rails-migrate-all_dbs'
+    $ gem install 'capistrano-rails-databases'
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/quimeo/capistrano-rails-migrate-all_dbs.
+Bug reports and pull requests are welcome on GitHub at https://github.com/quimeo/capistrano-rails-databases.
 
 ## License
 

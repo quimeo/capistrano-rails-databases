@@ -48,6 +48,26 @@ namespace :deploy do
     end
   end
 
+  desc 'Runs rake db:rollback'
+  task rollback_all_dbs: [:set_rails_env] do
+    colors = SSHKit::Color.new($stderr)
+    on roles :all do |host|
+      info "Task rollback_all_dbs is invoked for #{host}"
+      envs = get_all_env host
+      envs.each do |rails_env|
+        on fetch(:migration_servers) do
+          # puts fetch(:migration_servers)
+          within release_path do
+            with rails_env: rails_env.first do
+              info colors.colorize("Migration for\t\t\t#{rails_env.first}", :cyan)
+              execute :rake, 'db:rollback'
+            end
+          end
+        end
+      end
+    end
+  end
+
   after 'deploy:updated', 'deploy:migrate_all_dbs'
 end
 

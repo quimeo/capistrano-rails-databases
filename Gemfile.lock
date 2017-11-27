@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    capistrano-rails-migrate-all_dbs (0.0.1)
+    capistrano-rails-databases (0.0.0)
+      capistrano-rails
 
 GEM
   remote: https://rubygems.org/
@@ -13,8 +14,12 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
-    capistrano-rails (0.0.7)
-      capistrano
+    capistrano-bundler (1.3.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-rails (1.3.1)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
     concurrent-ruby (1.0.5)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
@@ -23,7 +28,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     rake (10.5.0)
-    sshkit (1.15.0)
+    sshkit (1.15.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
 
@@ -32,8 +37,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16.a)
-  capistrano-rails
-  capistrano-rails-migrate-all_dbs!
+  capistrano-rails-databases!
   minitest (~> 5.0)
   rake (~> 10.0)
 
